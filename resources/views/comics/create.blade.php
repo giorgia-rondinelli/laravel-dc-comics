@@ -12,6 +12,11 @@
 
             </div>
             <div class="mb-3">
+              <label for="description" class="form-label pt-3 ">Descrizione</label>
+              <input name="description" type="text" class="form-control" id="description" aria-describedby="">
+
+            </div>
+            <div class="mb-3">
               <label for="thumb" class="form-label  ">Immagine</label>
               <input name="thumb" type="text" class="form-control" id="thumb" aria-describedby="">
 

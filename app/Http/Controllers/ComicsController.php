@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Support\Str;
 
 class ComicsController extends Controller
 {
@@ -29,7 +30,44 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data=$request->all();
+
+        $new_comic= new Comic();
+        $new_comic->title=$form_data['title'];
+        $new_comic->slug=$this->generateSlug($new_comic->title);
+        $new_comic->description=$form_data['description'];
+        $new_comic->thumb=$form_data['thumb'];
+        $new_comic->price=$form_data['price'];
+        $new_comic->series=$form_data['series'];
+        $new_comic->sale_date=$form_data['sale_date'];
+        $new_comic->type=$form_data['type'];
+        $new_comic->artists= $form_data['artists'];
+        $new_comic->writers= $form_data['writers'];
+
+
+        $new_comic->save();
+
+        return redirect()->route('comics.show',$new_comic);
+
+
+    }
+    private function generateSlug($string){
+
+        $slug= Str::slug($string.'-');
+        $original_slug=$slug;
+        // 3
+        $exist= Comic::where('slug',$slug)->first();
+        dump(($exist));
+
+        // 5
+        $c=1;
+        while($exist){
+            $slug=$original_slug.'-'.$c;
+            $exist= Comic::where('slug',$slug)->first();
+            $c++;
+        }
+        return $slug;
+
     }
 
     /**
