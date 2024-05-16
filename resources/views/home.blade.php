@@ -18,7 +18,7 @@
                     <p class="card-text">Data di uscita: {{$comic->sale_date}}</p>
                     <p class="card-text">Tipologia: {{$comic->type}}</p>
                     <p class="card-text">Prezzo: {{$comic->price}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
                 </div>
             </div>
         @endforeach
