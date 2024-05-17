@@ -26,6 +26,16 @@
             <div>
                     <p>{{$comic->description}}</p>
             </div>
+            {{-- <?php
+             //$artist_array= explode(',',$comic->artists);
+            //?>
+
+            <ul>
+                @foreach ($artist_array as $artist )
+                <li>{{$artist}}</li>
+                @endforeach
+
+            </ul> --}}
             <div>Artisti:
                     <p>{{$comic->artists}}</p>
             </div>
