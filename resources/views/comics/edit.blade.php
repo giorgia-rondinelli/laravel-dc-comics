@@ -10,47 +10,102 @@
 
             <div class="mb-3">
               <label for="title" class="form-label pt-3 ">Titolo</label>
-              <input value="{{$comic->title}}" name="title" type="text" class="form-control" id="title" aria-describedby="">
+              <input value="{{old('title', $comic->title) }}" name="title" type="text" class="form-control @error('title') is-invalid @enderror" id="title" aria-describedby="">
+              @error ('title')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="description" class="form-label pt-3 ">Descrizione</label>
-              <input value="{{$comic->description}}" name="description" type="text" class="form-control" id="description" aria-describedby="">
+              <input value="{{old('description',$comic->description) }}" name="description" type="text" class="form-control @error('description') is-invalid @enderror" id="description" aria-describedby="">
+              @error ('description')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="thumb" class="form-label  ">Immagine</label>
-              <input name="thumb"value="{{$comic->thumb}} type="text" class="form-control" id="thumb" aria-describedby="">
+              <input name="thumb"value="{{old('thumb' ,$comic->thumb)}}" type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" aria-describedby="">
+              @error ('thumb')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="price" class="form-label  ">Prezzo</label>
-              <input value="{{$comic->price}} name="price" type="text" class="form-control" id="price" aria-describedby="">
+              <input value="{{old('price', $comic->price)}}" name="price" type="text" class="form-control @error('price') is-invalid @enderror" id="price" aria-describedby="">
+              @error ('price')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="series" class="form-label  ">Serie</label>
-              <input value="{{$comic->series}} name="series" type="text" class="form-control" id="series" aria-describedby="">
+              <input value="{{old('series',$comic->series) }}" name="series" type="text" class="form-control @error('series') is-invalid @enderror" id="series" aria-describedby="">
+              @error ('series')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="sale_date" class="form-label  ">Data di uscita</label>
-              <input value="{{$comic->sale_date}} name="sale_date" type="text" class="form-control" id="sale_date" aria-describedby="">
+              <input value="{{old('sale_date',$comic->sale_date) }}" name="sale_date" type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" aria-describedby="">
+              @error ('sale_date')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
+
 
             </div>
             <div class="mb-3">
               <label for="type" class="form-label  ">Tipologia</label>
-              <input value="{{$comic->type}} name="type" type="text" class="form-control" id="type" aria-describedby="">
+              <input value="{{old('type',$comic->type) }}"  name="type" type="text" class="form-control @error('type') is-invalid @enderror" id="type" aria-describedby="">
+              @error ('type')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="writers" class="form-label  ">Scrittori</label>
-              <input value="{{$comic->writers}} name="writers" type="text" class="form-control" id="writers" aria-describedby="">
+              <input value="{{old('writers',$comic->writers) }}" name="writers" type="text" class="form-control @error('writers') is-invalid @enderror" id="writers" aria-describedby="">
+              @error ('writers')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
             <div class="mb-3">
               <label for="artists" class="form-label  ">Artisti</label>
-              <input value="{{$comic->artists}} name="artists" type="text" class="form-control" id="artists" aria-describedby="">
+              <input value="{{old('artists',$comic->artists) }}" name="artists" type="text" class="form-control @error('artists') is-invalid @enderror" id="artists" aria-describedby="">
+              @error ('artists')
+              <p class="text-danger ">
+
+                  {{$message}}
+              </p>
+              @enderror
 
             </div>
 
